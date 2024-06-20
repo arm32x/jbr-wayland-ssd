@@ -110,8 +110,9 @@ public abstract class WLDecoratedPeer extends WLWindowPeer {
     }
 
     @Override
-    void notifyConfigured(int newSurfaceX, int newSurfaceY, int newSurfaceWidth, int newSurfaceHeight, boolean active, boolean maximized) {
-        super.notifyConfigured(newSurfaceX, newSurfaceY, newSurfaceWidth, newSurfaceHeight, active, maximized);
+    void notifyConfigured(int newSurfaceX, int newSurfaceY, int newSurfaceWidth, int newSurfaceHeight, boolean active, boolean maximized, boolean serverSideDecorations) {
+        super.notifyConfigured(newSurfaceX, newSurfaceY, newSurfaceWidth, newSurfaceHeight, active, maximized, serverSideDecorations);
+        decoration.setHasServerSideDecoration(serverSideDecorations);
         decoration.setActive(active);
     }
 

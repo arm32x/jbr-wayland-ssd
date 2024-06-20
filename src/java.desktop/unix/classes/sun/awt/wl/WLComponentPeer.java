@@ -359,7 +359,8 @@ public class WLComponentPeer implements ComponentPeer {
                             getParentNativePtr(target),
                             xNative, yNative,
                             isModal, isMaximized, isMinimized,
-                            title, WLToolkit.getApplicationID());
+                            title, WLToolkit.getApplicationID(),
+                            isUndecorated());
                 }
                 final long wlSurfacePtr = getWLSurface(nativePtr);
                 WLToolkit.registerWLSurface(wlSurfacePtr, this);
@@ -376,6 +377,10 @@ public class WLComponentPeer implements ComponentPeer {
                 nativeHideFrame(nativePtr);
             });
         }
+    }
+
+    protected boolean isUndecorated() {
+        return true;
     }
 
     /**
@@ -1029,7 +1034,7 @@ public class WLComponentPeer implements ComponentPeer {
 
     protected native void nativeCreateWLSurface(long ptr, long parentPtr,
                                                 int x, int y, boolean isModal, boolean isMaximized, boolean isMinimized,
-                                                String title, String appID);
+                                                String title, String appID, boolean wantsClientSideDecoration);
 
     protected native void nativeCreateWLPopup(long ptr, long parentPtr,
                                               int width, int height,
@@ -1237,7 +1242,7 @@ public class WLComponentPeer implements ComponentPeer {
         return new Dimension(javaUnitsToSurfaceUnits(d.width), javaUnitsToSurfaceUnits(d.height));
     }
 
-    void notifyConfigured(int newSurfaceX, int newSurfaceY, int newSurfaceWidth, int newSurfaceHeight, boolean active, boolean maximized) {
+    void notifyConfigured(int newSurfaceX, int newSurfaceY, int newSurfaceWidth, int newSurfaceHeight, boolean active, boolean maximized, boolean serverSideDecorations) {
         // NB: The width and height, as well as X and Y arguments specify the size and the location
         //     of the window in surface-local coordinates.
         if (log.isLoggable(PlatformLogger.Level.FINE)) {
