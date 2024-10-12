@@ -37,19 +37,19 @@ public class WLFrameDecoration {
     private static final int BUTTON_CIRCLE_SIZE = 10;
     private static final Font FONT = new Font(Font.DIALOG, Font.BOLD, 12);
     private static final Color ACTIVE_BACKGROUND = new Color(0xebebeb);
-    private static final Color ACTIVE_BACKGROUND_DARK = new Color(0x222222);
+    private static final Color ACTIVE_BACKGROUND_DARK = new Color(0x2f383e);
     private static final Color INACTIVE_BACKGROUND = new Color(0xfafafa);
-    private static final Color INACTIVE_BACKGROUND_DARK = new Color(0x2c2c2c);
+    private static final Color INACTIVE_BACKGROUND_DARK = new Color(0x2f383e);
     private static final Color ICON_BACKGROUND = ACTIVE_BACKGROUND;
     private static final Color ICON_BACKGROUND_DARK = ACTIVE_BACKGROUND_DARK;
     private static final Color ICON_HOVERED_BACKGROUND = new Color(0xd1d1d1);
-    private static final Color ICON_HOVERED_BACKGROUND_DARK = new Color(0x373737);
+    private static final Color ICON_HOVERED_BACKGROUND_DARK = new Color(0x404c51);
     private static final Color ICON_PRESSED_BACKGROUND = new Color(0xc0c0c0);
-    private static final Color ICON_PRESSED_BACKGROUND_DARK = new Color(0x565656);
+    private static final Color ICON_PRESSED_BACKGROUND_DARK = new Color(0x4a555b);
     private static final Color ACTIVE_FOREGROUND = Color.darkGray;
-    private static final Color ACTIVE_FOREGROUND_DARK = new Color(0xf7f7f7);
+    private static final Color ACTIVE_FOREGROUND_DARK = new Color(0xd3c6aa);
     private static final Color INACTIVE_FOREGROUND = Color.gray;
-    private static final Color INACTIVE_FOREGROUND_DARK = new Color(0xb5b5b5);
+    private static final Color INACTIVE_FOREGROUND_DARK = new Color(0x859289);
     private static final int SIGNIFICANT_DRAG_DISTANCE = 4;
     private static final int RESIZE_EDGE_THICKNESS = 5;
 
